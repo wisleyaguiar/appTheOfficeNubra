@@ -1,0 +1,196 @@
+
+body {
+    font-family: 'champagne', sans-serif;
+    background-image: url(../images/bg-aplicativo.png);
+    background-color: #9d9165;
+    background-attachment: fixed;
+    background-position:top center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #929796;
+    font-size: 100%;
+}
+
+section {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+.logo-abertura {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 10em;
+    margin-left: -5em;
+    margin-top: -5em;
+}
+
+header {
+    background-color: #FFF;
+    text-align: center;
+    padding: 17px;
+}
+
+header .img-responsive {
+    margin: 0 auto;
+}
+
+.cadastrar {
+    text-align: center;
+}
+
+.cadastrar h2 {
+    color: #FFF;
+    font-weight: bold;
+    font-size: 2.8em;
+    margin: 0;
+    padding: 40px 0;
+}
+
+.cadastrar .form-control {
+    border:0;
+    font-size: 2.5em;
+    text-align: center;
+    height: 41px;
+}
+
+.cadastrar .form-control#nome {
+    background-image:url(../images/cadastro-de-nome.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 10px 0;
+}
+
+.cadastrar .form-control#email {
+    background-image:url(../images/cadastro-de-email.png);
+    background-size: 10%;
+    background-repeat: no-repeat;
+    background-position: 10px 50%;
+}
+
+.cadastrar .form-group {
+    padding: 0 38px;
+}
+
+.btn-default {
+    background-color:#929796;
+    border: 0;
+    font-size: 2.7em;
+    font-weight: bold;
+    color: #FFF;
+    padding: 0 40px;
+}
+
+.menuNavegacao {
+    padding: 40px 0;
+}
+
+.menuNavegacao .row {
+    margin-bottom: 40px;
+}
+
+.conteudoLojas {
+    padding-top: 20px;
+}
+
+.conteudoLojas .form-group {
+    padding: 0 30px;
+    margin-bottom: 40px;
+}
+
+.conteudoLojas .form-control {
+    font-size: 2.5em;
+    text-align: center;
+    height: 40px;
+}
+
+.conteudoLojas .lojaLink {
+    margin-bottom: 15px;
+}
+
+.conteudoLojas .lojaLink a {
+    display: block;
+    background-color: #FFF;
+    font-size: 1.9em;
+    color: #929796;
+    border-radius: 7px;
+    padding: 3px;
+}
+
+.conteudoLojas .boxInfosLoja {
+    background-color: #FFF;
+    padding:15px;
+    border-radius: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 20px;
+}
+.conteudoLojas .boxInfosLoja h2 {
+    margin: 0;
+    padding-bottom: 30px;
+    font-size: 2em;
+}
+
+.conteudoLojas .boxInfosLoja p {
+    margin: 0;
+    font-size: 1.8em;
+}
+
+.contentMapa {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.contentMapa #gerarMapa {
+    width: 100%;
+    height: 400px;
+    background-color: #FFF;
+    margin-top: 20px;
+}
+
+.contentMapa .boxBtRota {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.contentMapa .boxBtRota .btn-default {
+    background-color: #FFF;
+    font-weight: normal;
+    color:#929796;
+}
+
+.linhaNews {
+    margin-top: 30px;
+}
+
+.linhaNews a.btNews {
+    display: block;
+    background-color: #FFF;
+    border-radius: 10px;
+    padding: 5px;
+    font-size: 3.8em;
+    text-align: right;
+    font-weight: bold;
+    color:#9b8955;
+    background-image: url(../images/icone-bt-jornal.png);
+    background-repeat: no-repeat;
+    background-position: 3px 50%;
+}
+
+.boxNewsImg {
+    margin-top: 30px;
+    padding: 0 15px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer a.linkVoltar {
+    width: 40px;
+    display: block;
+    padding-bottom: 15px;
+}
