@@ -25,7 +25,7 @@ section {
 }
 
 article {
-    padding-bottom: 60px;
+    padding-bottom: 10px;
 }
 
 .logo-abertura {
@@ -195,7 +195,7 @@ header .img-responsive {
 }
 
 footer {
-    position: fixed;
+    position: relative;
     bottom: 0;
     width: 100%;
     z-index:2;
