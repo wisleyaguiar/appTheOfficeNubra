@@ -198,6 +198,8 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
+    z-index:2;
+    height: 51px;
 }
 
 footer a.linkVoltar {
