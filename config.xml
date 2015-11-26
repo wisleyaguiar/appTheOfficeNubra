@@ -17,7 +17,15 @@
         Thought Imagem e Produção
     </author>
 
-    <icon src="icon.png" />
+    <icon src="images/icon.png" />
+
+    <!-- iPhone / iPod Touch -->
+    <icon src="images/icon.png" platform="ios" width="57" height="57" />
+    <icon src="images/icon@2x.png" platform="ios" width="114" height="114" />
+
+    <!-- iPad -->
+    <icon src="images/icon-72.png" platform="ios" width="72" height="72" />
+    <icon src="images/icon-72@2x.png" platform="ios" width="144" height="144" />
 
     <platform name="ios" >
         <preference name="orientation" value="portrait" />
