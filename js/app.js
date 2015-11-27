@@ -23,7 +23,6 @@ $('#formCadastreSe').submit(function(e){
 
     $.ajax({
         url:"http://theofficenubra.com.br/page-api/",
-        async: false,
         type:'GET',
         dataType: 'json',
         data:{action:'cadastrar',cadnome:nome,cademail:email},
