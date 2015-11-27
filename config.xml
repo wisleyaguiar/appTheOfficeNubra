@@ -38,6 +38,7 @@
     <preference name="permissions" value="none"/>
 
     <access origin="*" />
+    <allow-navigation href="theofficenubra.com.br" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <allow-intent href="tel:*" />
