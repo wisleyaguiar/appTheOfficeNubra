@@ -32,9 +32,9 @@ $('#formCadastreSe').submit(function(e){
         success: function(){
             $('#progress').remove();
         },
-        error:function(){
+        error:function(jqXHR,textStatus,errorThrown){
             $('#progress').remove();
-            alert('Não foi possível atender sua solicitação');
+            alert('Não foi possível atender sua solicitação ' + jqXHR.status + ' ' + errorThrown );
         }
     }).done(function(rep){
         if(rep.status = 'ok')
