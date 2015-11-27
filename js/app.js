@@ -21,10 +21,9 @@ $('#formCadastreSe').submit(function(e){
     var nome = $('#nome').val();
     var email = $('#email').val();
 
-    $.jsonp({
-        url:'http://theofficenubra.com.br/page-api/',
-        callbackParameter: 'callback',
-        timeout: 25000,
+    $.ajax({
+        url:"http://theofficenubra.com.br/page-api/",
+        async: false,
         type:'GET',
         dataType: 'json',
         data:{action:'cadastrar',cadnome:nome,cademail:email},
