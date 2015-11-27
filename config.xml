@@ -37,7 +37,9 @@
 
     <preference name="permissions" value="none"/>
 
+    <plugin name="cordova-plugin-whitelist" spec="1" />
+
     <access origin="*" />
     <allow-navigation href="*" />
-    
+
 </widget>
