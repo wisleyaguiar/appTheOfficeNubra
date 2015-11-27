@@ -38,14 +38,6 @@
     <preference name="permissions" value="none"/>
 
     <access origin="*" />
-    <allow-navigation href="theofficenubra.com.br" />
-    <allow-intent href="http://*/*" />
-    <allow-intent href="https://*/*" />
-    <allow-intent href="tel:*" />
-    <allow-intent href="sms:*" />
-    <allow-intent href="mailto:*" />
-    <allow-intent href="geo:*" />
-    <platform name="android">
-        <allow-intent href="market:*" />
-    </platform>
+    <allow-navigation href="*" />
+    
 </widget>
