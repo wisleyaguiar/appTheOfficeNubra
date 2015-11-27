@@ -21,8 +21,10 @@ $('#formCadastreSe').submit(function(e){
     var nome = $('#nome').val();
     var email = $('#email').val();
 
-    $.ajax({
+    $.jsonp({
         url:'http://theofficenubra.com.br/page-api/',
+        callbackParameter: 'callback',
+        timeout: 25000,
         type:'GET',
         dataType: 'json',
         data:{action:'cadastrar',cadnome:nome,cademail:email},
@@ -65,7 +67,7 @@ $('#lojas').click(function(e){
         },
         error:function(){
             $('#progress').remove();
-            alert('Não foi possível atender sua solicitação');
+            alert('Não foi possível atender sua solicitação' + jqXHR.status + ' ' + errorThrown);
         }
     }).done(function(rep){
         if(rep.status = 'ok')
@@ -98,7 +100,7 @@ function verloja(valrel) {
         },
         error:function(){
             $('#progress').remove();
-            alert('Não foi possível atender sua solicitação');
+            alert('Não foi possível atender sua solicitação ' + jqXHR.status + ' ' + errorThrown);
         }
     }).done(function(rep){
         if(rep.status = 'ok')
@@ -132,7 +134,7 @@ $('#formBuscaLoja').submit(function(e){
         },
         error:function(){
             $('#progress').remove();
-            alert('Não foi possível atender sua solicitação');
+            alert('Não foi possível atender sua solicitação ' + jqXHR.status + ' ' + errorThrown);
         }
     }).done(function(rep){
         if(rep.status = 'ok')
