@@ -35,6 +35,8 @@
         <preference name="orientation" value="portrait" />
     </platform>
 
+    <preference name="permissions" value="none"/>
+
     <access origin="*" />
 
 </widget>
