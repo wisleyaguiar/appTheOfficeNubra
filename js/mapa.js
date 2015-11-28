@@ -28,6 +28,8 @@ function initialize() {
     });
 }
 
+document.addEventListener("deviceready", GetGeoLocation , false);
+
 function GetGeolocation()
 {
     var options = { timeout: 30000, enableHighAccuracy: true };
@@ -82,5 +84,3 @@ $("#btTracarRota").click(function(event) {
     event.preventDefault();
     GetGeolocation();
 });
-
-document.addEventListener("deviceready", GetGeoLocation , false);
