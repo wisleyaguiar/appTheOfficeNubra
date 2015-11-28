@@ -6,8 +6,6 @@ var directionsDisplay;
 var directionsService = new google.maps.DirectionsService();
 var endPartida;
 
-document.addEventListener("deviceready", GetGeoLocation , false);
-
 function GetGeolocation()
 {
     var options = { timeout: 30000, enableHighAccuracy: true };
@@ -86,3 +84,5 @@ $("#btTracarRota").click(function(event) {
         }
     });
 });
+
+document.addEventListener("deviceready", GetGeoLocation , false);
