@@ -44,7 +44,7 @@ function GetPosition(position)
 }
 
 function PositionError() {
-    navigator.notification.alert('Could not find the current location.');
+    alert('Could not find the current location.');
 }
 
 function ReverseGeocode(latitude, longitude){
@@ -54,7 +54,7 @@ function ReverseGeocode(latitude, longitude){
 
         if (status == google.maps.GeocoderStatus.OK) {
             if (results[0]) {
-                //navigator.notification.alert('Address : ' + results[0].formatted_address + ',' + 'Type : ' + results[0].types);
+                alert('Address : ' + results[0].formatted_address + ',' + 'Type : ' + results[0].types);
                 var endPartida = results[0].formatted_address;
 
                 var enderecoChegada = "R. Frei Caneca, 558 - Consolação, São Paulo - SP, 01307-001";
@@ -72,10 +72,10 @@ function ReverseGeocode(latitude, longitude){
                 });
             }
             else {
-                navigator.notification.alert('Unable to detect your address.');
+                alert('Unable to detect your address.');
             }
         } else {
-            navigator.notification.alert('Unable to detect your address.');
+            alert('Unable to detect your address.');
         }
     });
 }
