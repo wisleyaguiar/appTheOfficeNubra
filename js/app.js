@@ -151,6 +151,8 @@ $('#mapa').click(function(e){
     e.preventDefault();
     $("#home").animate({right: '-100%'},1000);
     $('#mapaLocal').animate({right: '0'},1000);
+
+    initialize();
 });
 
 $('#news').click(function(e){

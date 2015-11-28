@@ -6,6 +6,28 @@ var directionsDisplay;
 var directionsService = new google.maps.DirectionsService();
 var endPartida;
 
+function initialize() {
+
+    directionsDisplay = new google.maps.DirectionsRenderer();
+    var latlng = new google.maps.LatLng(-23.5535238, -46.6539797);
+
+    var options = {
+        zoom: 15,
+        center: latlng,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+
+    map = new google.maps.Map(document.getElementById("gerarMapa"), options);
+    directionsDisplay.setMap(map);
+
+    // variável que define as opções do marcador
+    var marker = new google.maps.Marker({
+        position: latlng, // variável com as coordenadas Lat e Lng
+        map: map,
+        title:"The Office Frei Caneca Nubra"
+    });
+}
+
 function GetGeolocation()
 {
     var options = { timeout: 30000, enableHighAccuracy: true };
@@ -32,6 +54,20 @@ function ReverseGeocode(latitude, longitude){
             if (results[0]) {
                 navigator.notification.alert('Address : ' + results[0].formatted_address + ',' + 'Type : ' + results[0].types);
                 endPartida = results[0].formatted_address;
+
+                var enderecoChegada = "R. Frei Caneca, 558 - Consolação, São Paulo - SP, 01307-001";
+
+                var request = {
+                    origin: endPartida,
+                    destination: enderecoChegada,
+                    travelMode: google.maps.TravelMode.DRIVING
+                };
+
+                directionsService.route(request, function(result, status) {
+                    if (status == google.maps.DirectionsStatus.OK) {
+                        directionsDisplay.setDirections(result);
+                    }
+                });
             }
             else {
                 navigator.notification.alert('Unable to detect your address.');
@@ -42,47 +78,9 @@ function ReverseGeocode(latitude, longitude){
     });
 }
 
-function initialize() {
-
-    directionsDisplay = new google.maps.DirectionsRenderer();
-    var latlng = new google.maps.LatLng(-23.5535238, -46.6539797);
-
-    var options = {
-        zoom: 15,
-        center: latlng,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
-    };
-
-    map = new google.maps.Map(document.getElementById("gerarMapa"), options);
-    directionsDisplay.setMap(map);
-
-    // variável que define as opções do marcador
-    var marker = new google.maps.Marker({
-        position: latlng, // variável com as coordenadas Lat e Lng
-        map: map,
-        title:"The Office Frei Caneca Nubra"
-    });
-}
-
-initialize();
-GetGeolocation();
-
 $("#btTracarRota").click(function(event) {
     event.preventDefault();
-
-    var enderecoChegada = "R. Frei Caneca, 558 - Consolação, São Paulo - SP, 01307-001";
-
-    var request = {
-        origin: endPartida,
-        destination: enderecoChegada,
-        travelMode: google.maps.TravelMode.DRIVING
-    };
-
-    directionsService.route(request, function(result, status) {
-        if (status == google.maps.DirectionsStatus.OK) {
-            directionsDisplay.setDirections(result);
-        }
-    });
+    GetGeolocation();
 });
 
 document.addEventListener("deviceready", GetGeoLocation , false);
