@@ -1,10 +1,12 @@
 /**
  * Created by wisleyaguiar on 24/11/15.
  */
+document.addEventListener("deviceready", GetGeoLocation , false);
+
 var map;
 var directionsDisplay;
-var directionsService = new google.maps.DirectionsService();
-var endPartida;
+//var directionsService = new google.maps.DirectionsService();
+//var endPartida;
 
 function initialize() {
 
@@ -27,8 +29,6 @@ function initialize() {
         title:"The Office Frei Caneca Nubra"
     });
 }
-
-document.addEventListener("deviceready", GetGeoLocation , false);
 
 function GetGeolocation()
 {
@@ -64,6 +64,8 @@ function ReverseGeocode(latitude, longitude){
                     destination: enderecoChegada,
                     travelMode: google.maps.TravelMode.DRIVING
                 };
+
+                var directionsService = new google.maps.DirectionsService();
 
                 directionsService.route(request, function(result, status) {
                     if (status == google.maps.DirectionsStatus.OK) {
