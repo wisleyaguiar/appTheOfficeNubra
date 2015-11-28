@@ -2,18 +2,13 @@
  * Created by wisleyaguiar on 24/11/15.
  */
 
-/*$("#abertura").show();
-$("#cadastro").hide();
-$('#home').hide();
-$('#bucarLojas').hide();
-$('#infoLojas').hide();
-$('#mapaLocal').hide();
-$('#newsPage').hide();
-$('#eventosPage').hide();*/
-
 $(window).load(function() { // makes sure the whole site is loaded
     $('#abertura').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website.
-    $("#cadastro").animate({right: '0'},1000);
+    if(localStorage.gravado){
+        $("#home").animate({right: '0'}, 1000);
+    } else {
+        $("#cadastro").animate({right: '0'}, 1000);
+    }
 });
 
 $('#formCadastreSe').submit(function(e){
@@ -41,6 +36,7 @@ $('#formCadastreSe').submit(function(e){
         {
             $("#cadastro").animate({right: '-100%'}, 1000);
             $('#home').animate({right: '0'}, 1000);
+            localStorage.gravado = 1;
         } else {
             alert(rep.alerta);
         }
