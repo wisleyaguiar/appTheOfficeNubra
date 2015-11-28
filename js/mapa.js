@@ -50,6 +50,8 @@ initialize();
 $("#btTracarRota").click(function(event) {
     event.preventDefault();
 
+    var endPartida = "R. Das Guitarras, 43 - Taiamam, Uberlândia - MG, 38415-075";
+
     var enderecoChegada = "R. Frei Caneca, 558 - Consolação, São Paulo - SP, 01307-001";
 
     var request = {
