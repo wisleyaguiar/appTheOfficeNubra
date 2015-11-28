@@ -8,6 +8,19 @@ var endPartida;
 
 function initialize() {
 
+    navigator.geolocation.getCurrentPosition(function (position) {
+        var geocoder = new google.maps.Geocoder();
+
+        geocoder.geocode({
+                "location": new google.maps.LatLng(position.coords.latitude, position.coords.longitude)
+            },
+            function (results, status) {
+                if (status == google.maps.GeocoderStatus.OK) {
+                    endPartida = results[0].formatted_address;
+                }
+            });
+    });
+
     directionsDisplay = new google.maps.DirectionsRenderer();
     var latlng = new google.maps.LatLng(-23.5535238, -46.6539797);
 
@@ -36,23 +49,6 @@ initialize();
 
 $("#btTracarRota").click(function(event) {
     event.preventDefault();
-
-    navigator.geolocation.getCurrentPosition(function (position) {
-
-        /*pontoPadrao = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-         map.setCenter(pontoPadrao);*/
-
-        var geocoder = new google.maps.Geocoder();
-
-        geocoder.geocode({
-                "location": new google.maps.LatLng(position.coords.latitude, position.coords.longitude)
-            },
-            function(results, status) {
-                if (status == google.maps.GeocoderStatus.OK) {
-                    endPartida = results[0].formatted_address;
-                }
-            });
-    });
 
     var enderecoChegada = "R. Frei Caneca, 558 - Consolação, São Paulo - SP, 01307-001";
 
