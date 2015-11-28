@@ -6,6 +6,44 @@ var directionsDisplay;
 var directionsService = new google.maps.DirectionsService();
 var endPartida;
 
+document.addEventListener("deviceready", GetGeoLocation , false);
+
+function GetGeolocation()
+{
+    var options = { timeout: 30000, enableHighAccuracy: true };
+    navigator.geolocation.getCurrentPosition(GetPosition, PositionError, options);
+}
+
+function GetPosition(position)
+{
+    var latitude = position.coords.latitude;
+    var longitude = position.coords.longitude;
+    ReverseGeocode(latitude,longitude);   // Pass the latitude and longitude to get address.
+}
+
+function PositionError() {
+    navigator.notification.alert('Could not find the current location.');
+}
+
+function ReverseGeocode(latitude, longitude){
+    var reverseGeocoder = new google.maps.Geocoder();
+    var currentPosition = new google.maps.LatLng(latitude, longitude);
+    reverseGeocoder.geocode({'latLng': currentPosition}, function(results, status) {
+
+        if (status == google.maps.GeocoderStatus.OK) {
+            if (results[0]) {
+                navigator.notification.alert('Address : ' + results[0].formatted_address + ',' + 'Type : ' + results[0].types);
+                endPartida = results[0].formatted_address;
+            }
+            else {
+                navigator.notification.alert('Unable to detect your address.');
+            }
+        } else {
+            navigator.notification.alert('Unable to detect your address.');
+        }
+    });
+}
+
 function initialize() {
 
     directionsDisplay = new google.maps.DirectionsRenderer();
@@ -26,31 +64,13 @@ function initialize() {
         map: map,
         title:"The Office Frei Caneca Nubra"
     });
-
-    /*directionsDisplay.setPanel(document.getElementById("trajeto-texto"));*/
-
-    /**/
-
-    navigator.geolocation.getCurrentPosition(function (position) {
-        var geocoder = new google.maps.Geocoder();
-
-        geocoder.geocode({
-                "location": new google.maps.LatLng(position.coords.latitude, position.coords.longitude)
-            },
-            function (results, status) {
-                if (status == google.maps.GeocoderStatus.OK) {
-                    endPartida = results[0].formatted_address;
-                }
-            });
-    });
 }
 
 initialize();
+GetGeolocation();
 
 $("#btTracarRota").click(function(event) {
     event.preventDefault();
-
-    var endPartida = "R. Das Guitarras, 43 - Taiamam, Uberlândia - MG, 38415-075";
 
     var enderecoChegada = "R. Frei Caneca, 558 - Consolação, São Paulo - SP, 01307-001";
 
