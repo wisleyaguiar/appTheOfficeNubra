@@ -8,19 +8,6 @@ var endPartida;
 
 function initialize() {
 
-    navigator.geolocation.getCurrentPosition(function (position) {
-        var geocoder = new google.maps.Geocoder();
-
-        geocoder.geocode({
-                "location": new google.maps.LatLng(position.coords.latitude, position.coords.longitude)
-            },
-            function (results, status) {
-                if (status == google.maps.GeocoderStatus.OK) {
-                    endPartida = results[0].formatted_address;
-                }
-            });
-    });
-
     directionsDisplay = new google.maps.DirectionsRenderer();
     var latlng = new google.maps.LatLng(-23.5535238, -46.6539797);
 
@@ -43,6 +30,19 @@ function initialize() {
     /*directionsDisplay.setPanel(document.getElementById("trajeto-texto"));*/
 
     /**/
+
+    navigator.geolocation.getCurrentPosition(function (position) {
+        var geocoder = new google.maps.Geocoder();
+
+        geocoder.geocode({
+                "location": new google.maps.LatLng(position.coords.latitude, position.coords.longitude)
+            },
+            function (results, status) {
+                if (status == google.maps.GeocoderStatus.OK) {
+                    endPartida = results[0].formatted_address;
+                }
+            });
+    });
 }
 
 initialize();
