@@ -67,7 +67,7 @@ $('#lojas').click(function(e){
         if(rep.status = 'ok')
         {
             $.each(rep.empresas, function(i, val){
-                $('#loopLojas').append('<div class="row lojaLink"><div class="col-xs-2"><img src="images/mini-icone-lojas2.png" class="img-responsive"></div><div class="col-xs-10"><a onclick="verloja('+ val.id +')">'+ val.nome +' '+val.sala+'</a></div></div>');
+                $('#loopLojas').append('<div class="row lojaLink"><div class="col-xs-2"><img src="images/mini-icone-lojas.png" class="img-responsive"></div><div class="col-xs-10"><a onclick="verloja('+ val.id +')">'+ val.nome +' '+val.sala+'</a></div></div>');
             });
         } else {
             alert(rep.alerta);
@@ -134,7 +134,7 @@ $('#formBuscaLoja').submit(function(e){
         if(rep.status = 'ok')
         {
             $.each(rep.empresas, function(i, val){
-                $('#loopLojas').append('<div class="row lojaLink"><div class="col-xs-2"><img src="images/mini-icone-lojas2.png" class="img-responsive"></div><div class="col-xs-10"><a onclick="verloja('+ val.id +')">'+ val.nome +' '+val.sala+'</a></div></div>');
+                $('#loopLojas').append('<div class="row lojaLink"><div class="col-xs-2"><img src="images/mini-icone-lojas.png" class="img-responsive"></div><div class="col-xs-10"><a onclick="verloja('+ val.id +')">'+ val.nome +' '+val.sala+'</a></div></div>');
             });
         } else {
             alert(rep.alerta);

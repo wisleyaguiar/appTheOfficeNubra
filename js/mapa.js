@@ -54,7 +54,7 @@ function ReverseGeocode(latitude, longitude){
 
         if (status == google.maps.GeocoderStatus.OK) {
             if (results[0]) {
-                alert('Address : ' + results[0].formatted_address + ',' + 'Type : ' + results[0].types);
+                alert('Sua localização atual : ' + results[0].formatted_address);
                 var endPartida = results[0].formatted_address;
 
                 var enderecoChegada = "R. Frei Caneca, 558 - Consolação, São Paulo - SP, 01307-001";
