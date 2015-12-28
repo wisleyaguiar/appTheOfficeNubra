@@ -153,9 +153,9 @@ $('#mapa').click(function(e){
 
 $('#news').click(function(e){
     e.preventDefault();
-    /*$("#home").delay(350).fadeOut('slow');
-    $('#newsPage').fadeIn('slow');*/
-    alert('Não disponível no momento.');
+    $("#home").delay(350).fadeOut('slow');
+    $('#newsPage').fadeIn('slow');
+    /*alert('Não disponível no momento.');*/
 });
 
 $('#savedate').click(function(e){
