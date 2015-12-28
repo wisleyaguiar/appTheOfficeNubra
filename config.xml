@@ -46,4 +46,7 @@
     <access origin="*" />
     <allow-navigation href="*" />
 
+    <access origin="http://*" launch-external="yes" />
+    <access origin="https://*" launch-external="yes" />
+
 </widget>
