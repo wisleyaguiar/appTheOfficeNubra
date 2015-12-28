@@ -153,8 +153,8 @@ $('#mapa').click(function(e){
 
 $('#news').click(function(e){
     e.preventDefault();
-    $("#home").delay(350).fadeOut('slow');
-    $('#newsPage').fadeIn('slow');
+    $("#home").animate({right: '-100%'},1000);
+    $('#newsPage').animate({right: '0'},1000);
     /*alert('Não disponível no momento.');*/
 });
 
