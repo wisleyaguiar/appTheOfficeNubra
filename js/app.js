@@ -181,5 +181,5 @@ $('a.linkVoltar').click(function(e){
 
 function openURL(urlString){
     myURL = encodeURI(urlString);
-    window.open(myURL, '_blank');
+    window.open(myURL, '_system','location=no');
 }
