@@ -178,3 +178,8 @@ $('a.linkVoltar').click(function(e){
     $('#eventosPage').css({'right':'-100%'});
     $(destino).animate({right: '0'},1000);
 });
+
+function openURL(urlString){
+    myURL = encodeURI(urlString);
+    window.open(myURL, '_blank');
+}
