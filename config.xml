@@ -43,6 +43,7 @@
     </feature>
 
     <plugin name="cordova-plugin-whitelist" spec="1.2.0" />
+    <plugin name="org.apache.cordova.inappbrowser" spec="0.1.0" source="pgb" />
 
     <access origin="*" />
     <allow-navigation href="*" />
