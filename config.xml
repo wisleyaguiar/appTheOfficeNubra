@@ -2,8 +2,8 @@
 <widget xmlns   = "http://www.w3.org/ns/widgets"
         xmlns:gap   = "http://phonegap.com/ns/1.0"
         id          = "br.com.theofficenubra"
-        versionCode = "17"
-        version     = "1.0.3" >
+        versionCode = "18"
+        version     = "1.0.4" >
 
     <!-- versionCode is optional and Android only -->
 
@@ -40,6 +40,7 @@
     <feature name="http://api.phonegap.com/1.0/geolocation"/>
     <feature name="Geolocation">
         <param name="android-package" value="org.apache.cordova.geolocation.GeoBroker" />
+        <param name="ios-package" value="CDVLocation" />
     </feature>
 
     <plugin name="cordova-plugin-whitelist" spec="1.2.0" />
