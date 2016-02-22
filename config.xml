@@ -3,7 +3,7 @@
         xmlns:gap   = "http://phonegap.com/ns/1.0"
         id          = "br.com.theofficenubra"
         versionCode = "18"
-        version     = "1.0.4" >
+        version     = "1.0.5" >
 
     <!-- versionCode is optional and Android only -->
 
@@ -45,6 +45,8 @@
 
     <plugin name="cordova-plugin-whitelist" spec="1.2.0" />
     <plugin name="org.apache.cordova.inappbrowser" spec="0.6.0" source="pgb" />
+    <plugin name="org.apache.cordova.geolocation" />
+    <plugin name="org.apache.cordova.device" version="0.2.3" />
 
     <access origin="*" />
     <allow-navigation href="*" />
