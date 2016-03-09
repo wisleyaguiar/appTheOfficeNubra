@@ -2,8 +2,8 @@
 <widget xmlns   = "http://www.w3.org/ns/widgets"
         xmlns:gap   = "http://phonegap.com/ns/1.0"
         id          = "br.com.theofficenubra"
-        versionCode = "19"
-        version     = "1.0.5" >
+        versionCode = "20"
+        version     = "1.0.6" >
 
     <!-- versionCode is optional and Android only -->
 
@@ -18,6 +18,7 @@
     </author>
 
     <icon src="images/icon.png" />
+    <gap:splash src="images/bg-aplicativo.png" />
 
     <!-- iPhone / iPod Touch -->
     <icon src="images/icon.png" platform="ios" width="57" height="57" />

@@ -129,6 +129,7 @@ header .img-responsive {
     color: #929796;
     border-radius: 7px;
     padding: 3px;
+    overflow: hidden;
 }
 
 .conteudoLojas .boxInfosLoja {
@@ -225,4 +226,58 @@ footer a.linkVoltar {
     top: 120px;
     width: 200px;
     z-index: 1;
+}
+
+.status_lojas {
+    padding-bottom: 40px;
+}
+
+.op_status_loja {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    width: 50%;
+}
+
+.op_status_loja li {
+    display: block;
+    height: 32px;
+    margin-bottom: 5px;
+    font-size: 24px;
+    color: #FFFFFF;
+    padding-left: 41px;
+}
+
+.op_status_loja li.sinal_verde {
+    background: url(../images/sinal.png) no-repeat top left;
+}
+
+.op_status_loja li.sinal_amarelo {
+    background: url(../images/sinal.png) no-repeat center left;
+}
+
+.op_status_loja li.sinal_fechada {
+    background: url(../images/sinal.png) no-repeat bottom left;
+}
+
+.icon_status {
+    display: block;
+    height: 32px;
+    margin-bottom: 5px;
+    font-size: 24px;
+    color: #FFFFFF;
+    padding-left: 41px;
+    float: right;
+}
+
+.icon_status.aberta {
+    background: url(../images/sinal.png) no-repeat top left;
+}
+
+.icon_status.volto_l {
+    background: url(../images/sinal.png) no-repeat center left;
+}
+
+.icon_status.fechada {
+    background: url(../images/sinal.png) no-repeat bottom left;
 }

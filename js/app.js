@@ -67,7 +67,7 @@ $('#lojas').click(function(e){
         if(rep.status = 'ok')
         {
             $.each(rep.empresas, function(i, val){
-                $('#loopLojas').append('<div class="row lojaLink"><div class="col-xs-2"><img src="images/mini-icone-lojas.png" class="img-responsive"></div><div class="col-xs-10"><a onclick="verloja('+ val.id +')">'+ val.nome +' '+val.sala+'</a></div></div>');
+                $('#loopLojas').append('<div class="row lojaLink"><div class="col-xs-2"><img src="images/mini-icone-lojas.png" class="img-responsive"></div><div class="col-xs-10"><a onclick="verloja('+ val.id +')">'+ val.nome +' '+val.sala+' <span class="icon_status '+val.status_loja+'"></span></a></div></div>');
             });
         } else {
             alert(rep.alerta);
@@ -100,7 +100,7 @@ function verloja(valrel) {
         if(rep.status = 'ok')
         {
             $.each(rep.empresas, function(i, val){
-                $('.boxInfosLoja').html('<h2>'+ val.nome +' | Sala '+ val.sala +'</h2><p>Horário de Funcionamento: '+ val.horariofun +'</p><p>Especialidades: '+ val.especialidades +'</p> <p>Website: '+ val.website +'</p><p>Contato: '+ val.contato +'</p><p>Telefone: '+ val.telefone +'</p>');
+                $('.boxInfosLoja').html('<h2>'+ val.nome +' | Sala '+ val.sala +' <span class="icon_status '+val.status_loja+'"></span></h2><p>Horário de Funcionamento: '+ val.horariofun +'</p><p>Especialidades: '+ val.especialidades +'</p> <p>Website: '+ val.website +'</p><p>Contato: '+ val.contato +'</p><p>Telefone: '+ val.telefone +'</p>');
             });
         } else {
             alert(rep.alerta);
@@ -133,8 +133,9 @@ $('#formBuscaLoja').submit(function(e){
     }).done(function(rep){
         if(rep.status = 'ok')
         {
+            $('.status_lojas').hide();
             $.each(rep.empresas, function(i, val){
-                $('#loopLojas').append('<div class="row lojaLink"><div class="col-xs-2"><img src="images/mini-icone-lojas.png" class="img-responsive"></div><div class="col-xs-10"><a onclick="verloja('+ val.id +')">'+ val.nome +' '+val.sala+'</a></div></div>');
+                $('#loopLojas').append('<div class="row lojaLink"><div class="col-xs-2"><img src="images/mini-icone-lojas.png" class="img-responsive"></div><div class="col-xs-10"><a onclick="verloja('+ val.id +')">'+ val.nome +' '+val.sala+' <span class="icon_status '+val.status_loja+'"></span></a></div></div>');
             });
         } else {
             alert(rep.alerta);
