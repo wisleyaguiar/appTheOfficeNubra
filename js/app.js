@@ -165,7 +165,7 @@ $('#savedate').click(function(e){
     $('#eventosPage').animate({right: '0'},1000);
 });
 
-$('a.linkVoltar').click(function(e){
+$('a.linkVoltar, a.linkVoltarTop').click(function(e){
     e.preventDefault();
 
     var destino = $(this).attr('href');

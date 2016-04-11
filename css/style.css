@@ -12,6 +12,10 @@ body {
     right: -100%;
 }
 
+#bucarLojas, #home, #cadastro {
+    padding-top: 194px;
+}
+
 section {
     position: fixed;
     width: 100%;
@@ -41,6 +45,10 @@ header {
     background-color: #FFF;
     text-align: center;
     padding: 17px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 9;
 }
 
 header .img-responsive {
@@ -280,4 +288,12 @@ footer a.linkVoltar {
 
 .icon_status.fechada {
     background: url(../images/sinal.png) no-repeat bottom left;
+}
+
+a.linkVoltarTop {
+    width: 40px;
+    display: block;
+    position: absolute;
+    z-index: 9;
+    top: 130px;
 }
