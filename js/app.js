@@ -5,9 +5,9 @@
 $(window).load(function() { // makes sure the whole site is loaded
     $('#abertura').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website.
     if(localStorage.gravado){
-        $("#home").animate({right: '0'}, 1000);
+        $("#home").css({'right':'0'});
     } else {
-        $("#cadastro").animate({right: '0'}, 1000);
+        $("#cadastro").css({'right':'0'});
     }
     $('header').show();
 });
@@ -35,8 +35,8 @@ $('#formCadastreSe').submit(function(e){
     }).done(function(rep){
         if(rep.status = 'ok')
         {
-            $("#cadastro").animate({right: '-100%'}, 1000);
-            $('#home').animate({right: '0'}, 1000);
+            $("#cadastro").css({'right':'-100%'});
+            $('#home').css({'right':'0'});
             localStorage.gravado = 1;
         } else {
             alert(rep.alerta);
@@ -46,8 +46,8 @@ $('#formCadastreSe').submit(function(e){
 
 $('#lojas').click(function(e){
     e.preventDefault();
-    $("#home").animate({right: '-100%'},1000);
-    $('#bucarLojas').animate({right: '0'},1000);
+    $("#home").css({'right':'-100%'});;
+    $('#bucarLojas').css({'right':'0'});;
 
     $.ajax({
         url:'http://theofficenubra.com.br/page-api/',
@@ -79,8 +79,8 @@ $('#lojas').click(function(e){
 
 function verloja(valrel) {
 
-    $("#bucarLojas").animate({right: '-100%'},1000);
-    $('#infoLojas').animate({right: '0'},1000);
+    $("#bucarLojas").css({'right':'-100%'});
+    $('#infoLojas').css({'right':'0'});
 
     $.ajax({
         url:'http://theofficenubra.com.br/page-api/',
@@ -147,23 +147,23 @@ $('#formBuscaLoja').submit(function(e){
 
 $('#mapa').click(function(e){
     e.preventDefault();
-    $("#home").animate({right: '-100%'},1000);
-    $('#mapaLocal').animate({right: '0'},1000);
+    $("#home").css({'right':'-100%'});
+    $('#mapaLocal').css({'right':'0'});
 
     initialize();
 });
 
 $('#news').click(function(e){
     e.preventDefault();
-    $("#home").animate({right: '-100%'},1000);
-    $('#newsPage').animate({right: '0'},1000);
+    $("#home").css({'right':'-100%'});
+    $('#newsPage').css({'right':'0'});
     /*alert('Não disponível no momento.');*/
 });
 
 $('#savedate').click(function(e){
     e.preventDefault();
-    $("#home").animate({right: '-100%'},1000);
-    $('#eventosPage').animate({right: '0'},1000);
+    $("#home").css({'right':'-100%'});
+    $('#eventosPage').css({'right':'0'});
 });
 
 $('a.linkVoltar, a.linkVoltarTop').click(function(e){
@@ -178,7 +178,7 @@ $('a.linkVoltar, a.linkVoltarTop').click(function(e){
     $('#mapaLocal').css({'right':'-100%'});
     $('#newsPage').css({'right':'-100%'});
     $('#eventosPage').css({'right':'-100%'});
-    $(destino).animate({right: '0'},1000);
+    $(destino).css({'right':'0'});
 });
 
 function openURL(urlString){
