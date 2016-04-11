@@ -9,6 +9,7 @@ $(window).load(function() { // makes sure the whole site is loaded
     } else {
         $("#cadastro").animate({right: '0'}, 1000);
     }
+    $('header').show();
 });
 
 $('#formCadastreSe').submit(function(e){
