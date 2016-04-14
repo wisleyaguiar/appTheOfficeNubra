@@ -2,8 +2,8 @@
 <widget xmlns   = "http://www.w3.org/ns/widgets"
         xmlns:gap   = "http://phonegap.com/ns/1.0"
         id          = "br.com.theofficenubra"
-        versionCode = "21"
-        version     = "1.0.7" >
+        versionCode = "22"
+        version     = "1.0.8" >
 
     <!-- versionCode is optional and Android only -->
 
