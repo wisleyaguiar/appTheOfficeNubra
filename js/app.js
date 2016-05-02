@@ -10,6 +10,7 @@ $(window).load(function() { // makes sure the whole site is loaded
         $("#cadastro").css({'right':'0'});
     }
     $('header').show();
+    var carousel = $('.carousel').carousel();
 });
 
 $('#formCadastreSe').submit(function(e){
@@ -158,12 +159,71 @@ $('#news').click(function(e){
     $("#home").css({'right':'-100%'});
     $('#newsPage').css({'right':'0'});
     /*alert('Não disponível no momento.');*/
+
+    $.ajax({
+        url:'http://theofficenubra.com.br/page-api/',
+        type:'GET',
+        dataType: 'json',
+        data:{action:'jornais'},
+        beforeSend: function(){
+            $('body').append('<div id="progress">Carregando...</div>');
+        },
+        success: function(){
+            $('#progress').remove();
+        },
+        error:function(){
+            $('#progress').remove();
+            alert('Não foi possível atender sua solicitação' + jqXHR.status + ' ' + errorThrown);
+        }
+    }).done(function(rep){
+        if(rep.status = 'ok')
+        {
+            $.each(rep.jornais, function(i, val){
+                $('.linhaNews').append('<div class="col-xs-3"><a href="#" onclick="openURL(' + val.arquivo +')" id="news1" class="btNews">'+ val.numero_edicao +'</a></div>');
+            });
+        } else {
+            alert(rep.alerta);
+        }
+    });
+
 });
 
 $('#savedate').click(function(e){
     e.preventDefault();
     $("#home").css({'right':'-100%'});
     $('#eventosPage').css({'right':'0'});
+
+    $.ajax({
+        url:'http://theofficenubra.com.br/page-api/',
+        type:'GET',
+        dataType: 'json',
+        data:{action:'calendarios'},
+        beforeSend: function(){
+            $('body').append('<div id="progress">Carregando...</div>');
+        },
+        success: function(){
+            $('#progress').remove();
+        },
+        error:function(){
+            $('#progress').remove();
+            alert('Não foi possível atender sua solicitação' + jqXHR.status + ' ' + errorThrown);
+        }
+    }).done(function(rep){
+        if(rep.status = 'ok')
+        {
+            $.each(rep.calendarios, function(i, val){
+                if(i===0) {
+                    $('.carousel-inner').append('<div class="item active"><img src="' + val.url_imagem + '" alt=""/></div>');
+                } else {
+                    $('.carousel-inner').append('<div class="item"><img src="' + val.url_imagem + '" alt=""/></div>');
+                }
+            });
+            carousel.init();
+        } else {
+            alert(rep.alerta);
+        }
+    });
+    
 });
 
 $('a.linkVoltar, a.linkVoltarTop').click(function(e){
