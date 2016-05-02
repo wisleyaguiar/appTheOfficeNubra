@@ -10,7 +10,6 @@ $(window).load(function() { // makes sure the whole site is loaded
         $("#cadastro").css({'right':'0'});
     }
     $('header').show();
-    var carousel = $('.carousel').carousel();
 });
 
 $('#formCadastreSe').submit(function(e){
@@ -178,6 +177,7 @@ $('#news').click(function(e){
     }).done(function(rep){
         if(rep.status = 'ok')
         {
+            $('.linhaNews').html("");
             $.each(rep.jornais, function(i, val){
                 $('.linhaNews').append('<div class="col-xs-3"><a href=# onclick=openURL("' + val.arquivo + '") id=news1 class=btNews>'+ val.numero_edicao +'</a></div>');
             });
@@ -211,6 +211,7 @@ $('#savedate').click(function(e){
     }).done(function(rep){
         if(rep.status = 'ok')
         {
+            $('.carousel-inner').html("");
             $.each(rep.calendarios, function(i, val){
                 if(i===0) {
                     $('.carousel-inner').append('<div class="item active"><img src="' + val.url_imagem + '" alt=""/></div>');
@@ -218,7 +219,9 @@ $('#savedate').click(function(e){
                     $('.carousel-inner').append('<div class="item"><img src="' + val.url_imagem + '" alt=""/></div>');
                 }
             });
-            carousel.init();
+            $( document ).ready(function() {
+                $('.carousel').carousel();
+            });
         } else {
             alert(rep.alerta);
         }
