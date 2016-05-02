@@ -179,7 +179,7 @@ $('#news').click(function(e){
         if(rep.status = 'ok')
         {
             $.each(rep.jornais, function(i, val){
-                $('.linhaNews').append('<div class="col-xs-3"><a href="#" onclick="openURL(' + val.arquivo +')" id="news1" class="btNews">'+ val.numero_edicao +'</a></div>');
+                $('.linhaNews').append('<div class="col-xs-3"><a href=# onclick=openURL("' + val.arquivo + '") id=news1 class=btNews>'+ val.numero_edicao +'</a></div>');
             });
         } else {
             alert(rep.alerta);
@@ -190,7 +190,7 @@ $('#news').click(function(e){
 
 $('#savedate').click(function(e){
     e.preventDefault();
-    $("#home").css({'right':'-100%'});
+    $("#home").css({'right':'-100%'});''
     $('#eventosPage').css({'right':'0'});
 
     $.ajax({
