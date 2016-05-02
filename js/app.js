@@ -190,7 +190,7 @@ $('#news').click(function(e){
 
 $('#savedate').click(function(e){
     e.preventDefault();
-    $("#home").css({'right':'-100%'});''
+    $("#home").css({'right':'-100%'});
     $('#eventosPage').css({'right':'0'});
 
     $.ajax({
