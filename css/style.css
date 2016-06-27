@@ -3,8 +3,8 @@ html, body {
 }
 body {
     font-family: 'champagne', sans-serif;
-    background-color: #414141;
-    color: #929796;
+    background-color: rgb(187,155,92);
+    color: #494749;
     font-size: 100%;
     overflow: hidden;
     height: 100%;
@@ -12,11 +12,11 @@ body {
 
 #cadastro, #home, #bucarLojas, #infoLojas, #mapaLocal, #newsPage, #eventosPage {
     right: -100%;
-    transition: all 1s ease;
+    transition: right 1s ease;
 }
 
 #bucarLojas, #home, #cadastro {
-    padding-top: 194px;
+    /*padding-top: 194px;*/
 }
 
 section {
@@ -24,11 +24,17 @@ section {
     width: 100%;
     height: 100%;
     overflow-y: auto;
-    background-image: url(../images/bg-aplicativo.png);
+    background-image: url(../images/bg-interno.png);
+    background-color: rgb(246,246,247);
     background-attachment: fixed;
     background-position:top center;
-    background-size: cover;
+    background-size: 100%;
     background-repeat: no-repeat;
+}
+
+#abertura {
+    background-image: url(../images/bg-aplicativo2.png);
+    background-color: rgb(187,155,92);
 }
 
 article {
@@ -45,13 +51,12 @@ article {
 }
 
 header {
-    background-color: #FFF;
     text-align: center;
-    padding: 17px;
+    padding: 55px 17px 17px;
     width: 100%;
     height: 194px;
-    margin-top: -194px;
-    position: fixed;
+    /*margin-top: -194px;*/
+    position: relative;
     z-index: 10;
 }
 
@@ -64,7 +69,7 @@ header .img-responsive {
 }
 
 .cadastrar h2 {
-    color: #FFF;
+    color: #494749;
     font-weight: bold;
     font-size: 2.8em;
     margin: 0;
@@ -79,14 +84,14 @@ header .img-responsive {
 }
 
 .cadastrar .form-control#nome {
-    background-image:url(../images/cadastro-de-nome.png);
+    background-image:url(../images/cadastro-de-nome-2.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: 10px 0;
 }
 
 .cadastrar .form-control#email {
-    background-image:url(../images/cadastro-de-email.png);
+    background-image:url(../images/cadastro-de-email-2.png);
     background-size: 10%;
     background-repeat: no-repeat;
     background-position: 10px 50%;
@@ -97,7 +102,7 @@ header .img-responsive {
 }
 
 .btn-default {
-    background-color:#929796;
+    background-color:#BB9B5C;
     border: 0;
     font-size: 2.7em;
     font-weight: bold;
@@ -108,7 +113,7 @@ header .img-responsive {
 .menuNavegacao {
     padding: 40px 0;
     text-align: center;
-    color: #FFF;
+    color: #BB9B5C;
 }
 
 .menuNavegacao .row {
@@ -116,7 +121,7 @@ header .img-responsive {
 }
 
 .conteudoLojas {
-    padding-top: 20px;
+    padding-top: 38px;
 }
 
 .conteudoLojas .form-group {
@@ -256,7 +261,7 @@ footer a.linkVoltar {
     height: 32px;
     margin-bottom: 5px;
     font-size: 24px;
-    color: #FFFFFF;
+    color: #494749;
     padding-left: 41px;
 }
 
@@ -297,7 +302,8 @@ footer a.linkVoltar {
 a.linkVoltarTop {
     width: 40px;
     display: block;
-    position: absolute;
+    position: fixed;
     z-index: 9;
-    top: 130px;
+    top: 24px;
+    right: 20px;
 }

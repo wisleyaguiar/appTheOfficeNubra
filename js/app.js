@@ -68,7 +68,7 @@ $('#lojas').click(function(e){
         if(rep.status = 'ok')
         {
             $.each(rep.empresas, function(i, val){
-                $('#loopLojas').append('<div class="row lojaLink"><div class="col-xs-2"><img src="images/mini-icone-lojas.png" class="img-responsive"></div><div class="col-xs-10"><a onclick="verloja('+ val.id +')">'+ val.nome +' '+val.sala+' <span class="icon_status '+val.status_loja+'"></span></a></div></div>');
+                $('#loopLojas').append('<div class="row lojaLink"><div class="col-xs-2"><img src="images/mini-icone-lojas-3.png" class="img-responsive"></div><div class="col-xs-10"><a onclick="verloja('+ val.id +')">'+ val.nome +' '+val.sala+' <span class="icon_status '+val.status_loja+'"></span></a></div></div>');
             });
         } else {
             alert(rep.alerta);
@@ -136,7 +136,7 @@ $('#formBuscaLoja').submit(function(e){
         {
             $('.status_lojas').hide();
             $.each(rep.empresas, function(i, val){
-                $('#loopLojas').append('<div class="row lojaLink"><div class="col-xs-2"><img src="images/mini-icone-lojas.png" class="img-responsive"></div><div class="col-xs-10"><a onclick="verloja('+ val.id +')">'+ val.nome +' '+val.sala+' <span class="icon_status '+val.status_loja+'"></span></a></div></div>');
+                $('#loopLojas').append('<div class="row lojaLink"><div class="col-xs-2"><img src="images/mini-icone-lojas-3.png" class="img-responsive"></div><div class="col-xs-10"><a onclick="verloja('+ val.id +')">'+ val.nome +' '+val.sala+' <span class="icon_status '+val.status_loja+'"></span></a></div></div>');
             });
         } else {
             alert(rep.alerta);
